@@ -1,0 +1,13 @@
+C:\Programming\CSharp\Projects\KleinGarter\KleinGarter\bin\Debug\netcoreapp3.1\KleinGarter.exe
+C:\Programming\CSharp\Projects\KleinGarter\KleinGarter\bin\Debug\netcoreapp3.1\KleinGarter.deps.json
+C:\Programming\CSharp\Projects\KleinGarter\KleinGarter\bin\Debug\netcoreapp3.1\KleinGarter.runtimeconfig.json
+C:\Programming\CSharp\Projects\KleinGarter\KleinGarter\bin\Debug\netcoreapp3.1\KleinGarter.runtimeconfig.dev.json
+C:\Programming\CSharp\Projects\KleinGarter\KleinGarter\bin\Debug\netcoreapp3.1\KleinGarter.dll
+C:\Programming\CSharp\Projects\KleinGarter\KleinGarter\bin\Debug\netcoreapp3.1\KleinGarter.pdb
+C:\Programming\CSharp\Projects\KleinGarter\KleinGarter\obj\Debug\netcoreapp3.1\KleinGarter.csprojAssemblyReference.cache
+C:\Programming\CSharp\Projects\KleinGarter\KleinGarter\obj\Debug\netcoreapp3.1\KleinGarter.AssemblyInfoInputs.cache
+C:\Programming\CSharp\Projects\KleinGarter\KleinGarter\obj\Debug\netcoreapp3.1\KleinGarter.AssemblyInfo.cs
+C:\Programming\CSharp\Projects\KleinGarter\KleinGarter\obj\Debug\netcoreapp3.1\KleinGarter.csproj.CoreCompileInputs.cache
+C:\Programming\CSharp\Projects\KleinGarter\KleinGarter\obj\Debug\netcoreapp3.1\KleinGarter.dll
+C:\Programming\CSharp\Projects\KleinGarter\KleinGarter\obj\Debug\netcoreapp3.1\KleinGarter.pdb
+C:\Programming\CSharp\Projects\KleinGarter\KleinGarter\obj\Debug\netcoreapp3.1\KleinGarter.genruntimeconfig.cache

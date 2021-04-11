@@ -1,6 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KleinGarter", "KleinGarter\KleinGarter.csproj", "{391BD50C-2CC6-4F11-8583-1154DD0EFF9D}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KleinGarter", "KleinGarter\KleinGarter.csproj", "{97D5936C-C7C7-4701-8593-A779BCC5EC7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{391BD50C-2CC6-4F11-8583-1154DD0EFF9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{391BD50C-2CC6-4F11-8583-1154DD0EFF9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{391BD50C-2CC6-4F11-8583-1154DD0EFF9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{391BD50C-2CC6-4F11-8583-1154DD0EFF9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97D5936C-C7C7-4701-8593-A779BCC5EC7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97D5936C-C7C7-4701-8593-A779BCC5EC7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97D5936C-C7C7-4701-8593-A779BCC5EC7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97D5936C-C7C7-4701-8593-A779BCC5EC7A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8575E5CD-6A69-44C4-B081-6EF2EEC02636}
 	EndGlobalSection
 EndGlobal
