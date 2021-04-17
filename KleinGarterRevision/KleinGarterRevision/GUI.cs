@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace KleinGarter
+namespace KleinGarterRevision
 {
     class GUI
     {
@@ -110,20 +110,21 @@ namespace KleinGarter
             }
         }
 
-        public void SettingsMenu()
+        public void Settings()
         {
             Config.ConfigData config = Config.GetConfigData(); //Gets config data
-            List<string> valueName = new List<string>();
+            List<string> setting = new List<string>();
+            List<string> data = new List<string>();
 
-            valueName.Add("PlayerSkin");
-            valueName.Add("FoodConsumed");
-            valueName.Add("MinSpeed");
-            valueName.Add("MaxSpeed");
-            valueName.Add("Border");
-            valueName.Add("LevelWidth");
-            valueName.Add("LevelDifficulty");
-            valueName.Add("BorderColor");
-            valueName.Add("BackgroundColor");
+            setting.Add("PlayerSkin");
+            setting.Add("FoodConsumed");
+            setting.Add("MinSpeed");
+            setting.Add("MaxSpeed");
+            setting.Add("Border");
+            setting.Add("LevelWidth");
+            setting.Add("LevelDifficulty");
+            setting.Add("BorderColor");
+            setting.Add("BackgroundColor");
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\n\t" + @"  _________       __    __  .__                      ");
@@ -132,6 +133,7 @@ namespace KleinGarter
             Console.WriteLine("\t" + @" /        \  ___/|  |  |  | |  |   |  \/ /_/  >___ \ ");
             Console.WriteLine("\t" + @"/_______  /\___  >__|  |__| |__|___|  /\___  /____  >");
             Console.WriteLine("\t" + @"        \/     \/                   \//_____/     \/ ");
+            Console.WriteLine("\t" + @"-----------------------------------------------------");
 
             int interactionID = 0;
             var move = Console.ReadKey().Key;
@@ -140,18 +142,23 @@ namespace KleinGarter
             {
                 if (Console.KeyAvailable)
                 {
-                    ConsoleKey keyPressed = Console.ReadKey().Key;
-
                     switch (move)
                     {
-                        case ConsoleKey.UpArrow when interactionID ! > valueName.Count:
-                        case ConsoleKey.DownArrow when interactionID! < valueName.Count:
-                            move = keyPressed;
+                        case ConsoleKey.UpArrow when interactionID !< setting.Count:
+                            interactionID--;
+
+                            break;
+
+                        case ConsoleKey.DownArrow when interactionID !> setting.Count:
+                            Console.SetCursorPosition(8, 8);
+                            Console.WriteLine("Hello");
+
+
+                            interactionID++;
+
                             break;
                     }
                 }
-
-
             }
         }
     }

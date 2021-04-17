@@ -8,11 +8,11 @@ namespace KleinGarter
     {
         public void SnakeGame()
         {
-            GUI gui = new GUI(); //Graphical user interface
+            GUI gui = new GUI();
             Level level = new Level();
             Player player = new Player();
 
-            int interactionID = gui.InteractionMenu(); //Gets intaraction input from user (used for navigating menu)
+            int interactionID = gui.InteractionMenu();
 
             switch (interactionID)
             {
@@ -22,7 +22,7 @@ namespace KleinGarter
 
                     break;
                 case 2: //Settings
-                    
+                    gui.SettingsMenu();
                     break;
             }
         }

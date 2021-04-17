@@ -18,7 +18,7 @@ namespace KleinGarter
         public int Score { get; set; }
         public int ConsumedFood { get; set; }
         private double Speed { get; set; }
-        private int SpeedIncrease
+        private double SpeedIncrease
         {
             get
             {
@@ -26,7 +26,7 @@ namespace KleinGarter
                 return ((config.MaxSpeed - config.MinSpeed) / ((config.LevelWidth - 2) * (config.LevelHeight - 2))) * config.LevelDifficulty;
             }
         }
-        public int SpeedCount { get; set; }
+        public double SpeedCount { get; set; }
         #endregion
 
         private ConsoleKey _direction = ConsoleKey.DownArrow;
@@ -145,8 +145,6 @@ namespace KleinGarter
                             Speed = Speed + SpeedIncrease;
                             SpeedCount = SpeedCount + SpeedIncrease;
                         }
-
-                        //ScoreBoard
                     }
                     else
                     {

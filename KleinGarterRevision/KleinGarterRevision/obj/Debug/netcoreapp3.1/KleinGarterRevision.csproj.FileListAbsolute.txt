@@ -1,0 +1,13 @@
+C:\Programming\CSharp\Projects\KleinGarterRevision\KleinGarterRevision\bin\Debug\netcoreapp3.1\KleinGarterRevision.exe
+C:\Programming\CSharp\Projects\KleinGarterRevision\KleinGarterRevision\bin\Debug\netcoreapp3.1\KleinGarterRevision.deps.json
+C:\Programming\CSharp\Projects\KleinGarterRevision\KleinGarterRevision\bin\Debug\netcoreapp3.1\KleinGarterRevision.runtimeconfig.json
+C:\Programming\CSharp\Projects\KleinGarterRevision\KleinGarterRevision\bin\Debug\netcoreapp3.1\KleinGarterRevision.runtimeconfig.dev.json
+C:\Programming\CSharp\Projects\KleinGarterRevision\KleinGarterRevision\bin\Debug\netcoreapp3.1\KleinGarterRevision.dll
+C:\Programming\CSharp\Projects\KleinGarterRevision\KleinGarterRevision\bin\Debug\netcoreapp3.1\KleinGarterRevision.pdb
+C:\Programming\CSharp\Projects\KleinGarterRevision\KleinGarterRevision\obj\Debug\netcoreapp3.1\KleinGarterRevision.csprojAssemblyReference.cache
+C:\Programming\CSharp\Projects\KleinGarterRevision\KleinGarterRevision\obj\Debug\netcoreapp3.1\KleinGarterRevision.AssemblyInfoInputs.cache
+C:\Programming\CSharp\Projects\KleinGarterRevision\KleinGarterRevision\obj\Debug\netcoreapp3.1\KleinGarterRevision.AssemblyInfo.cs
+C:\Programming\CSharp\Projects\KleinGarterRevision\KleinGarterRevision\obj\Debug\netcoreapp3.1\KleinGarterRevision.csproj.CoreCompileInputs.cache
+C:\Programming\CSharp\Projects\KleinGarterRevision\KleinGarterRevision\obj\Debug\netcoreapp3.1\KleinGarterRevision.dll
+C:\Programming\CSharp\Projects\KleinGarterRevision\KleinGarterRevision\obj\Debug\netcoreapp3.1\KleinGarterRevision.pdb
+C:\Programming\CSharp\Projects\KleinGarterRevision\KleinGarterRevision\obj\Debug\netcoreapp3.1\KleinGarterRevision.genruntimeconfig.cache
