@@ -7,7 +7,7 @@
   <Border>9608</Border>
   <LevelWidth>50</LevelWidth>
   <LevelHeight>25</LevelHeight>
-  <LevelDifficulty>1</LevelDifficulty>
+  <LevelDifficulty>3</LevelDifficulty>
   <BorderColor>1</BorderColor>
   <BackgroundColor>1</BackgroundColor>
 </ConfigData>

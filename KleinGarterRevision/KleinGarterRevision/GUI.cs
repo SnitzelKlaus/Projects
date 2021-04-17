@@ -140,25 +140,7 @@ namespace KleinGarterRevision
 
             while (true)
             {
-                if (Console.KeyAvailable)
-                {
-                    switch (move)
-                    {
-                        case ConsoleKey.UpArrow when interactionID !< setting.Count:
-                            interactionID--;
 
-                            break;
-
-                        case ConsoleKey.DownArrow when interactionID !> setting.Count:
-                            Console.SetCursorPosition(8, 8);
-                            Console.WriteLine("Hello");
-
-
-                            interactionID++;
-
-                            break;
-                    }
-                }
             }
         }
     }

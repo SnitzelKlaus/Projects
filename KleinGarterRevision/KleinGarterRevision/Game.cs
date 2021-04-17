@@ -38,6 +38,7 @@ namespace KleinGarterRevision
             Food = new GameObject(0, 0);
             FoodConsumed = config.FoodConsumed;
             Speed = MinSpeed;
+            SpeedIncrease = (MaxSpeed - Speed) / ((LevelWidth - 2) * (LevelHeight - 2)) * LevelDifficulty; //Finds appropriate speed increase compared to level
             Alive = true;
             Score = 0;
 
@@ -66,13 +67,16 @@ namespace KleinGarterRevision
                     EnactPhysics();
 
                     nextLoop = nextLoop.AddMilliseconds(1000 / Speed);
-                    if (nextLoop > DateTime.Now)
+                    if (nextLoop > DateTime.Now) //Anti lag - Program will skip sleep if over time
+                    {
                         Thread.Sleep(nextLoop - DateTime.Now);
-
+                    }
                     break;
                 }
             }
             Console.WriteLine("Ded");
+            Console.WriteLine(SpeedIncrease);
+            Console.WriteLine(LevelDifficulty);
         }
         private void EnactPhysics()
         {
@@ -107,18 +111,12 @@ namespace KleinGarterRevision
                 }
             }
 
-            if(SnakeHead.X == Food.X && SnakeHead.Y == Food.Y)
-            {
-                FoodConsumed++;
-                DrawFood();
-            }
-
-            if(FoodConsumed > 0)
+            if (FoodConsumed > 0)
             {
                 FoodConsumed--;
                 Score++;
 
-                if(Speed < MaxSpeed)
+                if (Speed < MaxSpeed)
                 {
                     Speed = Speed + SpeedIncrease;
                     SpeedCount = SpeedCount + SpeedIncrease;
@@ -130,6 +128,12 @@ namespace KleinGarterRevision
                 Console.SetCursorPosition(Snake.Peek().X, Snake.Peek().Y);
                 Console.Write(' ');
                 Snake.Dequeue();
+            }
+
+            if (SnakeHead.X == Food.X && SnakeHead.Y == Food.Y)
+            {
+                FoodConsumed++;
+                DrawFood();
             }
 
             Snake.Enqueue(new GameObject(SnakeHead.X, SnakeHead.Y));
