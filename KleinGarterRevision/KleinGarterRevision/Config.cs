@@ -9,15 +9,19 @@ namespace KleinGarterRevision
     {
         #region Default Data
         //Player attributes
+        private const int DEF_FOOD_COLOR = 4;
+        private const int DEF_HEAD_COLOR = 0;
+        private const int DEF_BODY_COLOR = 6;
         private const char DEF_PLAYER_SKIN = '\u25A0';
         private const int DEF_FOOD_CONSUMED = 50;
         private const int DEF_MIN_SPEED = 10;
         private const int DEF_MAX_SPEED = 40;
+        private const bool DEF_HARDCORE = false;
 
         //Level attributes
+        private const int DEF_BACKGROUND_COLOR = 14;
+        private const int DEF_BORDER_COLOR = 8;
         private const char DEF_BORDER = '\u2588';
-        private const int DEF_BORDER_COLOR = 1;
-        private const int DEF_BACKGROUND_COLOR = 1;
         private const int DEF_LEVEL_WIDTH = 50;
         private const int DEF_LEVEL_HEIGHT = 25;
         private const int DEF_LEVEL_DIFFICULTY = 1;
@@ -66,32 +70,40 @@ namespace KleinGarterRevision
         public class ConfigData
         {
             //Player attributes
+            public int FoodColor;
+            public int HeadColor;
+            public int BodyColor;
             public char PlayerSkin;
             public int FoodConsumed;
             public int MinSpeed;
             public int MaxSpeed;
+            public bool Hardcore;
 
             //Level attributes
+            public int BackgroundColor;
+            public int BorderColor;
             public char Border;
             public int LevelWidth;
             public int LevelHeight;
             public int LevelDifficulty;
-            public int BorderColor;
-            public int BackgroundColor;
 
             public ConfigData()
             {
+                FoodColor = DEF_FOOD_COLOR;
+                HeadColor = DEF_HEAD_COLOR;
+                BodyColor = DEF_BODY_COLOR;
                 PlayerSkin = DEF_PLAYER_SKIN;
                 FoodConsumed = DEF_FOOD_CONSUMED;
                 MinSpeed = DEF_MIN_SPEED;
                 MaxSpeed = DEF_MAX_SPEED;
+                Hardcore = DEF_HARDCORE;
 
+                BackgroundColor = DEF_BACKGROUND_COLOR;
+                BorderColor = DEF_BORDER_COLOR;
                 Border = DEF_BORDER;
                 LevelWidth = DEF_LEVEL_WIDTH;
                 LevelHeight = DEF_LEVEL_HEIGHT;
                 LevelDifficulty = DEF_LEVEL_DIFFICULTY;
-                BorderColor = DEF_BORDER_COLOR;
-                BackgroundColor = DEF_BACKGROUND_COLOR;
             }
         }
     }

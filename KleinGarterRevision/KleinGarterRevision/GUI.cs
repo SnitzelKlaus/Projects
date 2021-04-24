@@ -110,21 +110,40 @@ namespace KleinGarterRevision
             }
         }
 
-        public void Settings()
+        private List<string> Settings = new List<string>();
+        private List<string> Data = new List<string>();
+
+        public void SettingsMenu()
         {
             Config.ConfigData config = Config.GetConfigData(); //Gets config data
-            List<string> setting = new List<string>();
-            List<string> data = new List<string>();
 
-            setting.Add("PlayerSkin");
-            setting.Add("FoodConsumed");
-            setting.Add("MinSpeed");
-            setting.Add("MaxSpeed");
-            setting.Add("Border");
-            setting.Add("LevelWidth");
-            setting.Add("LevelDifficulty");
-            setting.Add("BorderColor");
-            setting.Add("BackgroundColor");
+            if (Settings.Count == 0)
+            {
+                #region Settings values
+                Settings.Add("Hardcore");
+                Settings.Add("FoodConsumed");
+                Settings.Add("LevelWidth");
+                Settings.Add("LevelHeight");
+                Settings.Add("LevelDifficulty");
+                Settings.Add("HeadColor");
+                Settings.Add("BodyColor");
+                Settings.Add("FoodColor");
+                Settings.Add("BorderColor");
+                Settings.Add("BackgroundColor");
+                #endregion
+                #region Data values
+                Data.Add(Convert.ToString("<" + config.Hardcore + ">"));
+                Data.Add(Convert.ToString("<" + config.FoodConsumed + ">"));
+                Data.Add(Convert.ToString("<" + config.LevelWidth + ">"));
+                Data.Add(Convert.ToString("<" + config.LevelHeight + ">"));
+                Data.Add(Convert.ToString("<" + config.LevelDifficulty + ">"));
+                Data.Add(Convert.ToString("<" + config.HeadColor + ">"));
+                Data.Add(Convert.ToString("<" + config.BodyColor + ">"));
+                Data.Add(Convert.ToString("<" + config.FoodColor + ">"));
+                Data.Add(Convert.ToString("<" + config.BorderColor + ">"));
+                Data.Add(Convert.ToString("<" + config.BackgroundColor + ">"));
+                #endregion
+            }
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\n\t" + @"  _________       __    __  .__                      ");
@@ -135,13 +154,236 @@ namespace KleinGarterRevision
             Console.WriteLine("\t" + @"        \/     \/                   \//_____/     \/ ");
             Console.WriteLine("\t" + @"-----------------------------------------------------");
 
-            int interactionID = 0;
-            var move = Console.ReadKey().Key;
-
-            while (true)
+            for (int i = 0; i < Settings.Count; i++)
             {
-
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                WriteSetting(i);
             }
+
+            Console.WriteLine("\n\n");
+            Console.WriteLine("ESC = EXIT");
+            Console.WriteLine("ENTER = SAVES CONFIG");
+            Console.WriteLine("TAB = DEFAULT CONFIG");
+
+            int tmp;
+            int interactionID = 0;
+            ConsoleKey direction = ConsoleKey.UpArrow;
+
+            #region Highlights start position
+            Console.ForegroundColor = ConsoleColor.White;
+            WriteSetting(interactionID);
+            #endregion
+
+            while (direction != ConsoleKey.Escape)
+            {
+                if (Console.KeyAvailable)
+                {
+                    direction = Console.ReadKey().Key;
+
+                    switch (direction)
+                    {
+                        case ConsoleKey.LeftArrow:
+                            switch (interactionID)
+                            {
+                                case 0:
+                                    config.Hardcore = false;
+                                    Data[interactionID] = "<False>";
+
+                                    WriteSetting(interactionID);
+                                    break;
+                                case 1:
+                                    if (config.FoodConsumed > 0)
+                                        config.FoodConsumed--;
+
+                                    Data[interactionID] = $"<{config.FoodConsumed}>";
+
+                                    WriteSetting(interactionID);
+                                    break;
+                                case 2:
+                                    if (config.LevelWidth > 8)
+                                        config.LevelWidth -= 2;
+
+                                    Data[interactionID] = $"<{config.LevelWidth}>";
+
+                                    WriteSetting(interactionID);
+                                    break;
+                                case 3:
+                                    if (config.LevelHeight > 4)
+                                        config.LevelHeight--;
+
+                                    Data[interactionID] = $"<{config.LevelHeight}>";
+
+                                    WriteSetting(interactionID);
+                                    break;
+                                case 4:
+                                    if (config.LevelDifficulty > 0)
+                                        config.LevelDifficulty--;
+
+                                    Data[interactionID] = $"<{config.LevelDifficulty}>";
+
+                                    WriteSetting(interactionID);
+                                    break;
+                                case 5:
+                                    if (config.HeadColor > 0)
+                                        config.HeadColor--;
+
+                                    Data[interactionID] = $"<{config.HeadColor}>";
+
+                                    WriteSetting(interactionID);
+                                    break;
+                                case 6:
+                                    if (config.BodyColor > 0)
+                                        config.BodyColor--;
+
+                                    Data[interactionID] = $"<{config.BodyColor}>";
+
+                                    WriteSetting(interactionID);
+                                    break;
+                                case 7:
+                                    if (config.FoodColor > 0)
+                                        config.FoodColor--;
+
+                                    Data[interactionID] = $"<{config.FoodColor}>";
+
+                                    WriteSetting(interactionID);
+                                    break;
+                                case 8:
+                                    if (config.BorderColor > 0)
+                                        config.BorderColor--;
+
+                                    Data[interactionID] = $"<{config.BorderColor}>";
+
+                                    WriteSetting(interactionID);
+                                    break;
+                                case 9:
+                                    if (config.BackgroundColor > 0)
+                                        config.BackgroundColor--;
+
+                                    Data[interactionID] = $"<{config.BackgroundColor}>";
+
+                                    WriteSetting(interactionID);
+                                    break;
+                            }
+                            break;
+                        case ConsoleKey.RightArrow:
+                            switch (interactionID)
+                            {
+                                case 0:
+                                    config.Hardcore = true;
+                                    Data[interactionID] = "<True>";
+
+                                    WriteSetting(interactionID);
+                                    break;
+                                case 1:
+                                    if (config.FoodConsumed < (config.LevelWidth * config.LevelHeight))
+                                        config.FoodConsumed++;
+
+                                    Data[interactionID] = $"<{config.FoodConsumed}>";
+
+                                    WriteSetting(interactionID);
+                                    break;
+                                case 2:
+                                        config.LevelWidth += 2;
+
+                                    Data[interactionID] = $"<{config.LevelWidth}>";
+
+                                    WriteSetting(interactionID);
+                                    break;
+                                case 3:
+                                        config.LevelHeight++;
+
+                                    Data[interactionID] = $"<{config.LevelHeight}>";
+
+                                    WriteSetting(interactionID);
+                                    break;
+                                case 4:
+                                    if (config.LevelDifficulty < 10)
+                                        config.LevelDifficulty++;
+
+                                    Data[interactionID] = $"<{config.LevelDifficulty}>";
+
+                                    WriteSetting(interactionID);
+                                    break;
+                                case 5:
+                                    if (config.HeadColor < 15)
+                                        config.HeadColor++;
+
+                                    Data[interactionID] = $"<{config.HeadColor}>";
+
+                                    WriteSetting(interactionID);
+                                    break;
+                                case 6:
+                                    if (config.BodyColor < 15)
+                                        config.BodyColor++;
+
+                                    Data[interactionID] = $"<{config.BodyColor}>";
+
+                                    WriteSetting(interactionID);
+                                    break;
+                                case 7:
+                                    if (config.FoodColor < 15)
+                                        config.FoodColor++;
+
+                                    Data[interactionID] = $"<{config.FoodColor}>";
+
+                                    WriteSetting(interactionID);
+                                    break;
+                                case 8:
+                                    if (config.BorderColor < 15)
+                                        config.BorderColor++;
+
+                                    Data[interactionID] = $"<{config.BorderColor}>";
+
+                                    WriteSetting(interactionID);
+                                    break;
+                                case 9:
+                                    if (config.BackgroundColor < 15)
+                                        config.BackgroundColor++;
+
+                                    Data[interactionID] = $"<{config.BackgroundColor}>";
+
+                                    WriteSetting(interactionID);
+                                    break;
+                            }
+                            break;
+                        case ConsoleKey.DownArrow when interactionID <= Settings.Count - 1:
+                            tmp = interactionID;
+                            if(interactionID != Settings.Count - 1)
+                                interactionID++;
+
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                            WriteSetting(tmp);
+
+                            Console.ForegroundColor = ConsoleColor.White;
+                            WriteSetting(interactionID);
+
+                            break;
+                        case ConsoleKey.UpArrow when interactionID >= 0:
+                            tmp = interactionID;
+                            if (interactionID != 0)
+                                interactionID--;
+
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                            WriteSetting(tmp);
+
+                            Console.ForegroundColor = ConsoleColor.White;
+                            WriteSetting(interactionID);
+
+                            break;
+                        case ConsoleKey.Enter:
+                            Config.SaveConfigData(config);
+                            break;
+                    }
+                }
+            }
+        }
+
+        private void WriteSetting(int id)
+        {
+            Console.SetCursorPosition(8, id + 8);
+            Console.Write($"{Settings[id]}:");
+            Console.SetCursorPosition(51, id + 8);
+            Console.Write(Data[id].PadLeft(10));
         }
     }
 }

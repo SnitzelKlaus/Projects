@@ -14,18 +14,25 @@ namespace KleinGarterRevision
 
             //Start of program
             GUI gui = new GUI();
-            int interactionID = gui.InteractionMenu();
+            int interactionID;
 
-            switch (interactionID)
+            while (true)
             {
-                case 1: //Start game
-                    Game game = new Game();
-                    game.RunGame();
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.Clear();
+                interactionID = gui.InteractionMenu();
 
-                    break;
-                case 2: //Settings
-                    gui.Settings();
-                    break;
+                switch (interactionID)
+                {
+                    case 1: //Start game
+                        Game game = new Game();
+                        game.RunGame();
+                        break;
+                    case 2: //Settings
+                        gui.SettingsMenu();
+                        break;
+                }
             }
         }
     }

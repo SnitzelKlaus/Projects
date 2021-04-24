@@ -11,6 +11,12 @@ namespace KleinGarterRevision
 
         #region Values
         private ConsoleKey Direction = ConsoleKey.DownArrow;
+        private int BackgroundColor => config.BackgroundColor;
+        private int BorderColor => config.BorderColor;
+        private int BodyColor => config.BodyColor;
+        private int HeadColor => config.HeadColor;
+        private int FoodColor => config.FoodColor;
+
         private GameObject SnakeHead;
         private Queue<GameObject> Snake = new Queue<GameObject>();
         private GameObject Food;
@@ -22,11 +28,14 @@ namespace KleinGarterRevision
         private double SpeedCount;
 
 
+        //private int PlayerColorScheme => config.PlayerColorScheme;
         private char PlayerSkin => config.PlayerSkin;
         private int MinSpeed => config.MinSpeed;
         private int MaxSpeed => config.MaxSpeed;
         private char Border => config.Border;
-        private int BorderColor => config.BorderColor;
+        private bool Hardcore => config.Hardcore;
+
+        //private int LevelColorScheme => config.LevelColorScheme;
         private int LevelWidth => config.LevelWidth;
         private int LevelHeight => config.LevelHeight;
         private int LevelDifficulty => config.LevelDifficulty;
@@ -52,6 +61,7 @@ namespace KleinGarterRevision
                 SnakeHead.Y = (LevelHeight / 2) - 1;
             else
                 SnakeHead.Y = LevelHeight / 2;
+            Snake.Enqueue(new GameObject(SnakeHead.X, SnakeHead.Y));
             #endregion
 
             DrawLevel();
@@ -67,16 +77,16 @@ namespace KleinGarterRevision
                     EnactPhysics();
 
                     nextLoop = nextLoop.AddMilliseconds(1000 / Speed);
-                    if (nextLoop > DateTime.Now) //Anti lag - Program will skip sleep if over time
+                    if (nextLoop > DateTime.Now) //Anti lag - Program will skip 'sleep' if behind
                     {
                         Thread.Sleep(nextLoop - DateTime.Now);
+                        if(Hardcore)
+                            Thread.Sleep(100);
                     }
                     break;
                 }
             }
             Console.WriteLine("Ded");
-            Console.WriteLine(SpeedIncrease);
-            Console.WriteLine(LevelDifficulty);
         }
         private void EnactPhysics()
         {
@@ -111,6 +121,12 @@ namespace KleinGarterRevision
                 }
             }
 
+            if (SnakeHead.X == Food.X && SnakeHead.Y == Food.Y)
+            {
+                FoodConsumed++;
+                DrawFood();
+            }
+
             if (FoodConsumed > 0)
             {
                 FoodConsumed--;
@@ -124,21 +140,15 @@ namespace KleinGarterRevision
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.ForegroundColor = (ConsoleColor) BackgroundColor;
                 Console.SetCursorPosition(Snake.Peek().X, Snake.Peek().Y);
                 Console.Write(' ');
                 Snake.Dequeue();
             }
 
-            if (SnakeHead.X == Food.X && SnakeHead.Y == Food.Y)
-            {
-                FoodConsumed++;
-                DrawFood();
-            }
+            DrawPlayer();
 
             Snake.Enqueue(new GameObject(SnakeHead.X, SnakeHead.Y));
-
-            DrawPlayer();
         }
         private void DrawLevel()
         {
@@ -150,19 +160,19 @@ namespace KleinGarterRevision
                     if (i == 0 || i == LevelHeight)
                     {
                         //Level border
-                        Console.ForegroundColor = ConsoleColor.DarkGray;
+                        Console.ForegroundColor = (ConsoleColor)BorderColor;
                         Console.Write(Border);
                     }
                     else if (j == 0 || j == LevelWidth)
                     {
                         //Level border
-                        Console.ForegroundColor = ConsoleColor.DarkGray;
+                        Console.ForegroundColor = (ConsoleColor)BorderColor;
                         Console.Write(Border);
                     }
                     else
                     {
                         //Level Background
-                        Console.BackgroundColor = ConsoleColor.Yellow;
+                        Console.BackgroundColor = (ConsoleColor)BackgroundColor;
                         Console.Write(' ');
                     }
                 }
@@ -171,14 +181,14 @@ namespace KleinGarterRevision
         }
         private void DrawPlayer()
         {
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.ForegroundColor = (ConsoleColor)BodyColor;
             foreach(GameObject part in Snake)
             {
                 Console.SetCursorPosition(part.X, part.Y);
                 Console.Write(PlayerSkin);
             }
 
-            Console.ForegroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = (ConsoleColor)HeadColor;
             Console.SetCursorPosition(SnakeHead.X, SnakeHead.Y);
             Console.Write(PlayerSkin);
         }
@@ -191,9 +201,8 @@ namespace KleinGarterRevision
 
                 Food.X = random.Next(1, (LevelWidth - 1));
                 if (Food.X % 2 == 0)
-                {
                     Food.X--;
-                }
+
                 Food.Y = random.Next(1, (LevelHeight - 1));
 
                 foreach (GameObject part in Snake)
@@ -201,6 +210,7 @@ namespace KleinGarterRevision
                     if (part.X == Food.X && part.Y == Food.Y)
                     {
                         foodInBadPlace = true;
+                        break;
                     }
                     else
                     {
@@ -209,7 +219,7 @@ namespace KleinGarterRevision
                 }
             } while (foodInBadPlace);
 
-            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.ForegroundColor = (ConsoleColor) FoodColor;
             Console.SetCursorPosition(Food.X, Food.Y);
             Console.Write('\u25CF');
         }
