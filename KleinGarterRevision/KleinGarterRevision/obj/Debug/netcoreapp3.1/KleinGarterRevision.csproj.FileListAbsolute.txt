@@ -11,3 +11,16 @@ C:\Programming\CSharp\Projects\KleinGarterRevision\KleinGarterRevision\obj\Debug
 C:\Programming\CSharp\Projects\KleinGarterRevision\KleinGarterRevision\obj\Debug\netcoreapp3.1\KleinGarterRevision.dll
 C:\Programming\CSharp\Projects\KleinGarterRevision\KleinGarterRevision\obj\Debug\netcoreapp3.1\KleinGarterRevision.pdb
 C:\Programming\CSharp\Projects\KleinGarterRevision\KleinGarterRevision\obj\Debug\netcoreapp3.1\KleinGarterRevision.genruntimeconfig.cache
+C:\Programmering\Projects\KleinGarterRevision\KleinGarterRevision\bin\Debug\netcoreapp3.1\KleinGarterRevision.exe
+C:\Programmering\Projects\KleinGarterRevision\KleinGarterRevision\bin\Debug\netcoreapp3.1\KleinGarterRevision.deps.json
+C:\Programmering\Projects\KleinGarterRevision\KleinGarterRevision\bin\Debug\netcoreapp3.1\KleinGarterRevision.runtimeconfig.json
+C:\Programmering\Projects\KleinGarterRevision\KleinGarterRevision\bin\Debug\netcoreapp3.1\KleinGarterRevision.runtimeconfig.dev.json
+C:\Programmering\Projects\KleinGarterRevision\KleinGarterRevision\bin\Debug\netcoreapp3.1\KleinGarterRevision.dll
+C:\Programmering\Projects\KleinGarterRevision\KleinGarterRevision\bin\Debug\netcoreapp3.1\KleinGarterRevision.pdb
+C:\Programmering\Projects\KleinGarterRevision\KleinGarterRevision\obj\Debug\netcoreapp3.1\KleinGarterRevision.csprojAssemblyReference.cache
+C:\Programmering\Projects\KleinGarterRevision\KleinGarterRevision\obj\Debug\netcoreapp3.1\KleinGarterRevision.AssemblyInfoInputs.cache
+C:\Programmering\Projects\KleinGarterRevision\KleinGarterRevision\obj\Debug\netcoreapp3.1\KleinGarterRevision.AssemblyInfo.cs
+C:\Programmering\Projects\KleinGarterRevision\KleinGarterRevision\obj\Debug\netcoreapp3.1\KleinGarterRevision.csproj.CoreCompileInputs.cache
+C:\Programmering\Projects\KleinGarterRevision\KleinGarterRevision\obj\Debug\netcoreapp3.1\KleinGarterRevision.dll
+C:\Programmering\Projects\KleinGarterRevision\KleinGarterRevision\obj\Debug\netcoreapp3.1\KleinGarterRevision.pdb
+C:\Programmering\Projects\KleinGarterRevision\KleinGarterRevision\obj\Debug\netcoreapp3.1\KleinGarterRevision.genruntimeconfig.cache

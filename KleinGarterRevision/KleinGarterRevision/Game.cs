@@ -13,9 +13,9 @@ namespace KleinGarterRevision
         private ConsoleKey Direction = ConsoleKey.DownArrow;
         private int BackgroundColor => config.BackgroundColor;
         private int BorderColor => config.BorderColor;
-        private int BodyColor => config.BodyColor;
-        private int HeadColor => config.HeadColor;
-        private int FoodColor => config.FoodColor;
+        private int BodyColor;
+        private int HeadColor;
+        private int FoodColor;
 
         private GameObject SnakeHead;
         private Queue<GameObject> Snake = new Queue<GameObject>();
@@ -33,7 +33,7 @@ namespace KleinGarterRevision
         private int MinSpeed => config.MinSpeed;
         private int MaxSpeed => config.MaxSpeed;
         private char Border => config.Border;
-        private bool Hardcore => config.Hardcore;
+        private bool FunkyMode => config.FunkyMode;
 
         //private int LevelColorScheme => config.LevelColorScheme;
         private int LevelWidth => config.LevelWidth;
@@ -44,6 +44,10 @@ namespace KleinGarterRevision
         public void RunGame()
         {
             #region Start configuration
+            BodyColor = config.BodyColor;
+            HeadColor = config.HeadColor;
+            FoodColor = config.FoodColor;
+
             Food = new GameObject(0, 0);
             FoodConsumed = config.FoodConsumed;
             Speed = MinSpeed;
@@ -71,20 +75,28 @@ namespace KleinGarterRevision
 
             while (Alive)
             {
+                var s1 = new Stopwatch();
                 while (nextLoop < DateTime.Now)
                 {
+                    s1.Start();
                     GetInput();
                     EnactPhysics();
 
                     nextLoop = nextLoop.AddMilliseconds(1000 / Speed);
+                    
+                    s1.Stop();
+                    Console.SetCursorPosition(30, 5);
+                    Console.Write(s1.Elapsed.TotalMilliseconds);
+
                     if (nextLoop > DateTime.Now) //Anti lag - Program will skip 'sleep' if behind
                     {
                         Thread.Sleep(nextLoop - DateTime.Now);
-                        if(Hardcore)
-                            Thread.Sleep(100);
+                        //if(Hardcore)
+                            //Thread.Sleep(100);
                     }
                     break;
                 }
+
             }
             Console.WriteLine("Ded");
         }
@@ -181,9 +193,13 @@ namespace KleinGarterRevision
         }
         private void DrawPlayer()
         {
+            Random random = new Random();
+
             Console.ForegroundColor = (ConsoleColor)BodyColor;
             foreach(GameObject part in Snake)
             {
+                BodyColor = random.Next(0, 15);
+                Console.ForegroundColor = (ConsoleColor)BodyColor;
                 Console.SetCursorPosition(part.X, part.Y);
                 Console.Write(PlayerSkin);
             }

@@ -16,7 +16,7 @@ namespace KleinGarterRevision
         private const int DEF_FOOD_CONSUMED = 50;
         private const int DEF_MIN_SPEED = 10;
         private const int DEF_MAX_SPEED = 40;
-        private const bool DEF_HARDCORE = false;
+        private const bool DEF_FUNKY_MODE = false;
 
         //Level attributes
         private const int DEF_BACKGROUND_COLOR = 14;
@@ -77,7 +77,7 @@ namespace KleinGarterRevision
             public int FoodConsumed;
             public int MinSpeed;
             public int MaxSpeed;
-            public bool Hardcore;
+            public bool FunkyMode;
 
             //Level attributes
             public int BackgroundColor;
@@ -96,7 +96,7 @@ namespace KleinGarterRevision
                 FoodConsumed = DEF_FOOD_CONSUMED;
                 MinSpeed = DEF_MIN_SPEED;
                 MaxSpeed = DEF_MAX_SPEED;
-                Hardcore = DEF_HARDCORE;
+                FunkyMode = DEF_FUNKY_MODE;
 
                 BackgroundColor = DEF_BACKGROUND_COLOR;
                 BorderColor = DEF_BORDER_COLOR;

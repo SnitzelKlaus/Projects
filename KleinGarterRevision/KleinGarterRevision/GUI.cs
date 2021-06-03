@@ -132,7 +132,7 @@ namespace KleinGarterRevision
                 Settings.Add("BackgroundColor");
                 #endregion
                 #region Data values
-                Data.Add(Convert.ToString("<" + config.Hardcore + ">"));
+                Data.Add(Convert.ToString("<" + config.FunkyMode + ">"));
                 Data.Add(Convert.ToString("<" + config.FoodConsumed + ">"));
                 Data.Add(Convert.ToString("<" + config.LevelWidth + ">"));
                 Data.Add(Convert.ToString("<" + config.LevelHeight + ">"));
@@ -186,7 +186,7 @@ namespace KleinGarterRevision
                             switch (interactionID)
                             {
                                 case 0:
-                                    config.Hardcore = false;
+                                    config.FunkyMode = false;
                                     Data[interactionID] = "<False>";
 
                                     WriteSetting(interactionID);
@@ -269,7 +269,7 @@ namespace KleinGarterRevision
                             switch (interactionID)
                             {
                                 case 0:
-                                    config.Hardcore = true;
+                                    config.FunkyMode = true;
                                     Data[interactionID] = "<True>";
 
                                     WriteSetting(interactionID);

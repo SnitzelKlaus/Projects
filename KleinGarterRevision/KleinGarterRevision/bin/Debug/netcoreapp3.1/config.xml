@@ -2,16 +2,16 @@
 <ConfigData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <FoodColor>4</FoodColor>
   <HeadColor>0</HeadColor>
-  <BodyColor>1</BodyColor>
+  <BodyColor>6</BodyColor>
   <PlayerSkin>9632</PlayerSkin>
   <FoodConsumed>0</FoodConsumed>
   <MinSpeed>10</MinSpeed>
   <MaxSpeed>40</MaxSpeed>
-  <Hardcore>false</Hardcore>
-  <BackgroundColor>5</BackgroundColor>
+  <FunkyMode>true</FunkyMode>
+  <BackgroundColor>14</BackgroundColor>
   <BorderColor>8</BorderColor>
   <Border>9608</Border>
-  <LevelWidth>40</LevelWidth>
-  <LevelHeight>20</LevelHeight>
-  <LevelDifficulty>0</LevelDifficulty>
+  <LevelWidth>50</LevelWidth>
+  <LevelHeight>25</LevelHeight>
+  <LevelDifficulty>10</LevelDifficulty>
 </ConfigData>

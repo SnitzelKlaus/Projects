@@ -1,0 +1,13 @@
+C:\Programmering\Projects\Battleship\Battleship\obj\Debug\netcoreapp3.1\Battleship.csprojAssemblyReference.cache
+C:\Programmering\Projects\Battleship\Battleship\obj\Debug\netcoreapp3.1\Battleship.AssemblyInfoInputs.cache
+C:\Programmering\Projects\Battleship\Battleship\obj\Debug\netcoreapp3.1\Battleship.AssemblyInfo.cs
+C:\Programmering\Projects\Battleship\Battleship\obj\Debug\netcoreapp3.1\Battleship.csproj.CoreCompileInputs.cache
+C:\Programmering\Projects\Battleship\Battleship\bin\Debug\netcoreapp3.1\Battleship.exe
+C:\Programmering\Projects\Battleship\Battleship\bin\Debug\netcoreapp3.1\Battleship.deps.json
+C:\Programmering\Projects\Battleship\Battleship\bin\Debug\netcoreapp3.1\Battleship.runtimeconfig.json
+C:\Programmering\Projects\Battleship\Battleship\bin\Debug\netcoreapp3.1\Battleship.runtimeconfig.dev.json
+C:\Programmering\Projects\Battleship\Battleship\bin\Debug\netcoreapp3.1\Battleship.dll
+C:\Programmering\Projects\Battleship\Battleship\bin\Debug\netcoreapp3.1\Battleship.pdb
+C:\Programmering\Projects\Battleship\Battleship\obj\Debug\netcoreapp3.1\Battleship.dll
+C:\Programmering\Projects\Battleship\Battleship\obj\Debug\netcoreapp3.1\Battleship.pdb
+C:\Programmering\Projects\Battleship\Battleship\obj\Debug\netcoreapp3.1\Battleship.genruntimeconfig.cache
